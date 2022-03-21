@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CardFactory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public event Action CardsDealing;
 
-    // Update is called once per frame
-    void Update()
+    private List<CardModel> _cards;
+
+    public List<CardModel> Cards { get => _cards; set => _cards = value; }
+
+    public void GiveCards(List<CardModel> cards)
     {
-        
+        _cards = cards;
+        CardsDealing?.Invoke();
     }
 }

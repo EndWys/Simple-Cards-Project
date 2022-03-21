@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeckModel : MonoBehaviour
+public class DeckModel
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private List<CardModel> _cardsInDeck;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public List<CardModel> CardsInDeck { get => _cardsInDeck; set => _cardsInDeck = value; }
+
 }
